@@ -1,14 +1,23 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06172f">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:title" content="PyM Tech | Soluciones tecnológicas para empresas">
+  <meta property="og:description" content="Equipamiento, infraestructura TI, redes y servicios tecnológicos para empresas en Perú.">
+  <meta property="og:image" content="assets/hero-modern.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <meta name="description" content="PyM-Tech: equipos, infraestructura TI, conectividad, soporte y soluciones tecnológicas para empresas.">
   <title>PyM-Tech | Soluciones tecnológicas para empresas</title>
   <link rel="preload" as="image" href="assets/hero-modern.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
   <div class="top-strip">
     <div class="container top-strip-inner">
       <span>Soluciones tecnológicas para empresas</span>
@@ -23,25 +32,25 @@
   <header class="navbar">
     <div class="container nav-inner">
       <a class="logo" href="#inicio">
-        <img src="assets/pymtech-logo.webp" alt="PyM-Tech">
+        <img src="assets/pymtech-logo.webp" loading="lazy" decoding="async" alt="PyM-Tech">
       </a>
-      <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <button class="menu-btn" type="button" aria-label="Abrir menú" aria-controls="main-navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav-links">
+      <nav class="nav-links" id="main-navigation" aria-label="Navegación principal">
         <a href="#nosotros">Nosotros</a>
         <a href="#soluciones">Soluciones</a>
         <a href="#servicios">Servicios</a>
         <a href="#sectores">Sectores</a>
         <a href="#contacto">Contacto</a>
-        <a class="button button-small" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Solicitar cotización</a>
+        <a class="button button-small" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <img class="hero-image" fetchpriority="high" decoding="async" src="assets/hero-modern.webp" alt="Entorno corporativo con soluciones tecnológicas">
+      <img class="hero-image" src="assets/hero-modern.jpg" alt="" fetchpriority="high" decoding="async">
       <div class="hero-shade"></div>
       <div class="container hero-content">
         <div class="hero-copy reveal">
@@ -49,7 +58,7 @@
           <h1>Tecnología que resuelve.<br><span>Soluciones que acompañan.</span></h1>
           <p>Equipamiento, infraestructura, conectividad y servicios TI para organizaciones que buscan implementar tecnología con claridad, soporte y seguimiento.</p>
           <div class="hero-actions">
-            <a class="button" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20quisiera%20cotizar%20una%20soluci%C3%B3n%20tecnol%C3%B3gica" target="_blank" rel="noopener">Cotizar una solución</a>
+            <a class="button" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20quisiera%20cotizar%20una%20soluci%C3%B3n%20tecnol%C3%B3gica" target="_blank" rel="noopener noreferrer">Cotizar una solución</a>
             <a class="button button-outline" href="#soluciones">Explorar soluciones</a>
           </div>
           <div class="hero-tags">
@@ -85,10 +94,10 @@
           </div>
         </div>
         <div class="about-media reveal">
-          <img class="about-main" src="assets/consultoria-ti.webp" alt="Asesoría tecnológica empresarial">
+          <img class="about-main" src="assets/consultoria-ti.webp" loading="lazy" decoding="async" alt="Asesoría tecnológica empresarial">
           <div class="about-small-grid">
-            <img src="assets/computo.webp" alt="Equipos tecnológicos">
-            <img src="assets/redes.webp" alt="Redes empresariales">
+            <img src="assets/computo.webp" loading="lazy" decoding="async" alt="Equipos tecnológicos">
+            <img src="assets/redes.webp" loading="lazy" decoding="async" alt="Redes empresariales">
           </div>
         </div>
       </div>
@@ -106,7 +115,7 @@
 
         <div class="solution-grid">
           <article class="solution-card reveal" id="equipamiento">
-            <img src="assets/computo.webp" alt="Equipos de cómputo">
+            <img src="assets/computo.webp" loading="lazy" decoding="async" alt="Equipos de cómputo">
             <div class="solution-content">
               <span class="card-index">01</span>
               <h3>Equipamiento y productividad</h3>
@@ -116,7 +125,7 @@
           </article>
 
           <article class="solution-card reveal">
-            <img src="assets/seguridad.webp" alt="Impresión y soluciones visuales">
+            <img src="assets/seguridad.webp" loading="lazy" decoding="async" alt="Impresión y soluciones visuales">
             <div class="solution-content">
               <span class="card-index">02</span>
               <h3>Impresión y soluciones visuales</h3>
@@ -126,7 +135,7 @@
           </article>
 
           <article class="solution-card reveal" id="infraestructura">
-            <img src="assets/datacenter-modern.webp" alt="Centro de datos">
+            <img src="assets/datacenter-modern.webp" loading="lazy" decoding="async" alt="Centro de datos">
             <div class="solution-content">
               <span class="card-index">03</span>
               <h3>Infraestructura TI</h3>
@@ -136,7 +145,7 @@
           </article>
 
           <article class="solution-card reveal" id="conectividad">
-            <img src="assets/redes.webp" alt="Redes y conectividad">
+            <img src="assets/redes.webp" loading="lazy" decoding="async" alt="Redes y conectividad">
             <div class="solution-content">
               <span class="card-index">04</span>
               <h3>Redes y conectividad</h3>
@@ -151,7 +160,7 @@
     <section class="feature feature-dark" id="servicios">
       <div class="container feature-grid">
         <div class="feature-image reveal">
-          <img src="assets/datacenter-modern.webp" alt="Infraestructura tecnológica">
+          <img src="assets/datacenter-modern.webp" loading="lazy" decoding="async" alt="Infraestructura tecnológica">
         </div>
         <div class="feature-copy reveal">
           <span class="eyebrow light">SERVICIOS TECNOLÓGICOS</span>
@@ -190,12 +199,12 @@
         <div class="reveal">
           <span class="eyebrow">ECOSISTEMA TECNOLÓGICO</span>
           <h2>Marcas de referencia</h2>
-          <p>Gestionamos requerimientos de tecnología tomando en cuenta especificación, disponibilidad y compatibilidad del proyecto.</p>
+          <p>Evaluamos alternativas de distintas marcas según especificaciones, disponibilidad y compatibilidad. Las marcas mostradas son referenciales y no implican distribución oficial.</p>
         </div>
         <div class="brand-grid reveal">
-          <div><img src="assets/dell.webp" alt="Dell"></div>
-          <div><img src="assets/hp.webp" alt="HP"></div>
-          <div><img src="assets/epson.webp" alt="Epson"></div>
+          <div><img src="assets/dell.webp" loading="lazy" decoding="async" alt="Dell"></div>
+          <div><img src="assets/hp.webp" loading="lazy" decoding="async" alt="HP"></div>
+          <div><img src="assets/epson.webp" loading="lazy" decoding="async" alt="Epson"></div>
         </div>
       </div>
     </section>
@@ -203,7 +212,7 @@
     <section class="section why-section">
       <div class="container why-grid">
         <div class="why-media reveal">
-          <img src="assets/hero-modern.webp" alt="Tecnología para empresas">
+          <img src="assets/hero-modern.webp" loading="lazy" decoding="async" alt="Tecnología para empresas">
         </div>
         <div class="why-copy reveal">
           <span class="eyebrow">POR QUÉ PYM-TECH</span>
@@ -222,14 +231,14 @@
     <section class="section section-soft" id="sectores">
       <div class="container">
         <div class="section-heading reveal">
-          <div><span class="eyebrow">MERCADO</span><h2>Sectores y organizaciones con interacción comercial</h2></div>
+          <div><span class="eyebrow">MERCADO</span><h2>Soluciones para distintos sectores</h2></div>
           <p>La propuesta de PyM-Tech se adapta a organizaciones con necesidades de renovación, implementación y continuidad tecnológica.</p>
         </div>
         <div class="sector-grid">
-          <article class="sector-card reveal"><img src="assets/servicios.webp" alt="Educación"><div><span>Educación</span><h3>San Silvestre School</h3><p>Equipamiento, visualización y requerimientos tecnológicos.</p></div></article>
-          <article class="sector-card reveal"><img src="assets/hero-modern.webp" alt="Ingeniería"><div><span>Ingeniería</span><h3>ABZ Ingenieros S.A.C.</h3><p>Soluciones empresariales e infraestructura tecnológica.</p></div></article>
-          <article class="sector-card reveal"><img src="assets/consultoria-ti.webp" alt="Tecnología y servicios"><div><span>Tecnología / servicios</span><h3>Joltech Perú S.A.C.</h3><p>Requerimientos y alternativas tecnológicas.</p></div></article>
-          <article class="sector-card reveal"><img src="assets/redes.webp" alt="Telecomunicaciones"><div><span>Telecomunicaciones</span><h3>Convergia</h3><p>Conectividad e infraestructura de red.</p></div></article>
+          <article class="sector-card reveal"><img src="assets/servicios.webp" loading="lazy" decoding="async" alt="Educación"><div><span>Educación</span><h3>Instituciones educativas</h3><p>Equipamiento, visualización y requerimientos tecnológicos.</p></div></article>
+          <article class="sector-card reveal"><img src="assets/hero-modern.webp" loading="lazy" decoding="async" alt="Ingeniería"><div><span>Ingeniería</span><h3>Empresas de ingeniería</h3><p>Soluciones empresariales e infraestructura tecnológica.</p></div></article>
+          <article class="sector-card reveal"><img src="assets/consultoria-ti.webp" loading="lazy" decoding="async" alt="Tecnología y servicios"><div><span>Tecnología / servicios</span><h3>Empresas de servicios</h3><p>Requerimientos y alternativas tecnológicas.</p></div></article>
+          <article class="sector-card reveal"><img src="assets/redes.webp" loading="lazy" decoding="async" alt="Telecomunicaciones"><div><span>Telecomunicaciones</span><h3>Operadores y proveedores de red</h3><p>Conectividad e infraestructura de red.</p></div></article>
         </div>
       </div>
     </section>
@@ -285,7 +294,7 @@
           <span class="eyebrow light">TU PRÓXIMO REQUERIMIENTO</span>
           <h2>Cuéntanos qué necesitas y empezamos por entenderlo.</h2>
         </div>
-        <a class="button button-white" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Hablar con un asesor</a>
+        <a class="button button-white" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer">Hablar con un asesor</a>
       </div>
     </section>
 
@@ -305,11 +314,11 @@
 
         <form class="contact-form reveal" id="quoteForm">
           <div class="form-row">
-            <label>Nombre<input id="qName" required placeholder="Tu nombre"></label>
-            <label>Empresa<input id="qCompany" placeholder="Nombre de la empresa"></label>
+            <label>Nombre<input id="qName" autocomplete="name" maxlength="100" required placeholder="Tu nombre"></label>
+            <label>Empresa<input id="qCompany" autocomplete="organization" maxlength="120" placeholder="Nombre de la empresa"></label>
           </div>
           <div class="form-row">
-            <label>Teléfono<input id="qPhone" placeholder="Tu teléfono"></label>
+            <label>Teléfono<input id="qPhone" type="tel" autocomplete="tel" maxlength="24" placeholder="Tu teléfono"></label>
             <label>Tipo de requerimiento
               <select id="qType">
                 <option>Equipamiento tecnológico</option>
@@ -320,9 +329,10 @@
               </select>
             </label>
           </div>
-          <label>¿Qué necesitas?<textarea id="qNeed" rows="5" required placeholder="Ej.: 10 laptops, pantalla interactiva, servidor, switches, soporte..."></textarea></label>
+          <label>¿Qué necesitas?<textarea id="qNeed" rows="5" maxlength="1500" required placeholder="Ej.: 10 laptops, pantalla interactiva, servidor, switches, soporte..."></textarea></label>
           <button class="button" type="submit">Preparar solicitud por WhatsApp</button>
-          <small>El formulario prepara el mensaje y abre WhatsApp. No almacena información.</small>
+          <small>Los datos se utilizan para preparar un mensaje de WhatsApp; este sitio no almacena la información.</small>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -330,16 +340,16 @@
 
   <footer class="footer">
     <div class="container footer-main">
-      <div><img src="assets/pymtech-logo.webp" alt="PyM-Tech"><p>Desarrollo de Soluciones Tecnológicas</p></div>
+      <div><img src="assets/pymtech-logo.webp" loading="lazy" decoding="async" alt="PyM-Tech"><p>Desarrollo de Soluciones Tecnológicas</p></div>
       <div class="footer-links">
         <a href="#nosotros">Nosotros</a><a href="#soluciones">Soluciones</a><a href="#servicios">Servicios</a><a href="#sectores">Sectores</a><a href="#contacto">Contacto</a>
       </div>
-      <div class="footer-contact"><a href="https://consultoriapym.com.pe/" target="_blank" rel="noopener">consultoriapym.com.pe</a><span>San Isidro · Lima · Perú</span></div>
+      <div class="footer-contact"><a href="https://consultoriapym.com.pe/" target="_blank" rel="noopener noreferrer">consultoriapym.com.pe</a><span>San Isidro · Lima · Perú</span></div>
     </div>
     <div class="container footer-bottom"><span>© 2026 PyM-Tech</span><span>Nueva línea tecnológica de Consultoría Empresarial P&M</span></div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a class="wa-float" href="https://wa.me/51940410742?text=Hola%20PyM-Tech,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
   <script src="script.js"></script>
 </body>
 </html>
