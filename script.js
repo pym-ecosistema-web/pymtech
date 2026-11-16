@@ -1,29 +1,72 @@
 "use strict";
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mobileMenu = window.matchMedia("(max-width: 1050px)");
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".nav-links");
 const setMenu = (open) => {
   if (!menuBtn || !nav) return;
-  nav.classList.toggle("open", open);
-  menuBtn.setAttribute("aria-expanded", String(open));
-  menuBtn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  const expanded = mobileMenu.matches && open;
+  if (!expanded && mobileMenu.matches && nav.contains(document.activeElement)) menuBtn.focus();
+  nav.classList.toggle("open", expanded);
+  nav.inert = mobileMenu.matches && !expanded;
+  menuBtn.setAttribute("aria-expanded", String(expanded));
+  menuBtn.setAttribute("aria-label", expanded ? "Cerrar menú" : "Abrir menú");
 };
 if (menuBtn && nav) {
+  setMenu(false);
   menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
   nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenu(false)));
-  document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
-  document.addEventListener("click", e => {
-    if (!nav.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      setMenu(false);
+      menuBtn.focus();
+    }
   });
+  document.addEventListener("click", event => {
+    if (!nav.contains(event.target) && !menuBtn.contains(event.target)) setMenu(false);
+  });
+  mobileMenu.addEventListener("change", () => setMenu(false));
 }
 const revealElements = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add("show"); observer.unobserve(entry.target); }
+const hero = document.querySelector(".hero");
+const heroCopy = document.querySelector(".hero-copy");
+let revealObserver;
+const revealAll = () => revealElements.forEach(element => {
+  element.classList.remove("is-pending");
+  element.classList.add("show");
+});
+const syncMotion = () => {
+  if (revealObserver) revealObserver.disconnect();
+  const allowMotion = !motionPreference.matches;
+  if (hero) hero.classList.toggle("motion-ready", allowMotion);
+  if (heroCopy) heroCopy.classList.toggle("motion-ready", allowMotion);
+  if (!allowMotion || !("IntersectionObserver" in window)) {
+    revealAll();
+    return;
+  }
+  try {
+    revealObserver = new window.IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove("is-pending");
+        entry.target.classList.add("show");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: .08 });
+    revealElements.forEach(element => {
+      if (element === heroCopy) {
+        element.classList.add("show");
+      } else if (!element.classList.contains("show")) {
+        element.classList.add("is-pending");
+        revealObserver.observe(element);
+      }
     });
-  }, { threshold: .08 });
-  revealElements.forEach(el => observer.observe(el));
-} else revealElements.forEach(el => el.classList.add("show"));
+  } catch {
+    revealAll();
+  }
+};
+syncMotion();
+motionPreference.addEventListener("change", syncMotion);
 const form = document.getElementById("quoteForm");
 if (form) {
   form.addEventListener("submit", event => {
